@@ -1,0 +1,40 @@
+<polymer-element name="standards-widget" attributes="availableStandards currentStandard">
+	<template>
+		<div class="standards-container">
+			<div class="standard-breadcrumb">
+				Number and Operations in Base Ten : Use place value understanding and properties of operations to add and subtract.
+			</div>
+			<div class="standard-title">{{_currentStandard}}</div>
+			<div class="standard-text">
+				Add within 100, including adding a two-digit number and a one-digit number, and adding a two-digit number and a multiple of 10, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction.
+			</div>
+			<div class="other-standards-title">
+				<strong>Other Standards</strong> (Click on standard code to view the report)
+			</div>
+			<div class="other-standards-content clearfix">
+				<template repeat="{{_standard in _availableStandards}}">
+					<template if="{{_standard != _currentStandard}}">
+						<span class="standard-bug" on-tap="{{selectStandard}}">{{_standard}}</span>
+					</template>
+				</template>
+			</div> 
+		</div>
+	</template>
+    <script>
+    	Polymer({
+			ready: function() {
+				console.log("In Ready of standards-widget");
+				this._currentStandard = this.currentStandard;
+				this._availableStandards = JSON.parse(this.availableStandards);
+				console.log("Out Ready of standards-widget");
+			},
+			selectStandard: function(e, detail, sender) {
+				console.log("In selectStandard of standards-widget");
+				var selectedStandard = e.target.templateInstance.model._standard;
+				this._currentStandard = selectedStandard;
+				this.fire('changed-standard', {to_standard: selectedStandard});
+				console.log("Out selectStandard of standards-widget");
+			}
+		});
+	</script>
+</polymer-element>
