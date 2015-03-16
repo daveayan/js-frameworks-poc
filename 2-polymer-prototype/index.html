@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Polymer - JS Frameworks POC</title>
+<link href="../0-static-html/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="../0-static-html/main.css" rel="stylesheet" media="screen">
+<link rel="import" href="polymer/polymer/polymer.html">
+<link rel="import" href="widgets/student-list.html">
+<link rel="import" href="widgets/report-graph-widget.html">
+<link rel="import" href="widgets/standardsWidget.html">
+<link rel="import" href="widgets/resourcesWidget.html">
+<body class="main">
+	<div id="page" class="evaluation  ">
+		<div id="header">
+			<header>
+				<header>
+					<div class="container">
+						<span class="header-title">JS Framework POC - Polymer</span>
+					</div>
+				</header>
+			</header>
+		</div>
+		<div id="pageContent" data-ng-app="emprogressreportApp" data-ng-controller="emPRController">
+			<div id="top-bar">
+				<div id="top-student-navigation">
+					<div class="container">
+						<student-list id="student-list-1" listOfStudents="{{allStudents}}" currentStudent="{{currentStudent}}"/>
+					</div>
+				</div>
+			</div>
+			<div class="container" id="report-container">
+				<div class="row">
+					<div class="col-md-7">
+						<report-graph-widget id="report-graph-widget-1" currentStudent="{{currentStudent}}"/>
+					</div>
+					<div class="col-md-5">
+						<standards-widget id="standards-widget-1" currentStandard="{{currentStandard}}" availableStandards="{{availableStandards}}"></standards-widget>
+					</div>
+				</div>
+			</div>
+			<resources-widget id="resources-widget-1" resources="{{resources[currentStandard]}}"/>
+		</div>
+	</div>
+	<script src="polymer/platform/platform.js"></script>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="js-framework-poc-polymer.js"></script>
+</body>
+</html>

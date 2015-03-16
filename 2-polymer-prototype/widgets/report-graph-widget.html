@@ -1,0 +1,30 @@
+<polymer-element name="report-graph-widget" attributes="currentStudent">
+	<template>
+		<div class="graph-container">
+			<div class="graph-title">Performance Details for {{_currentStudent.firstName}} {{_currentStudent.lastInitial}}</div>
+			<span> October 01, 2014 - November 01, 2014</span>
+			<div class="graph">
+				<iframe
+					src="../../4-d3js-trials/sunburst/index.html"
+					width = "500px"
+					height = "500px"
+					seamless = true
+					scrolling = "no"
+					frameborder = 0
+				></iframe>
+			</div>
+		</div>
+	</template>
+    <script>
+    	Polymer({
+			ready: function() {
+				this._currentStudent = JSON.parse(this.currentStudent);
+				console.log("In Ready of report-graph-widget");
+			},
+			update: function(newCurrentStudent) {
+				this._currentStudent = newCurrentStudent;
+				console.log("In Update of report-graph-widget " + newCurrentStudent);
+			}
+    	});
+    </script>
+</polymer-element>
