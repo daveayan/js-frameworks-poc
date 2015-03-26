@@ -1,0 +1,23 @@
+<div class="standards-container">
+    <div class="graph-title">Routes</div>
+    <a href="#/">Add more students</a>
+    <hr/>
+	<div class="standard-breadcrumb">
+		Number and Operations in Base Ten : Use place value understanding and properties of operations to add and subtract.
+	</div>
+	<div class="standard-title">{{currentStandard}}</div>
+	<div class="standard-text">
+		Add within 100, including adding a two-digit number and a one-digit number, and adding a two-digit number and a multiple of 10, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction.
+	</div>
+	<div class="other-standards-title">
+		<strong>Other Standards</strong> (Click on standard code to view the report)
+	</div>
+	<div class="other-standards-content clearfix">
+		<span 	class="standard-bug"
+				ng-repeat='std in availableStandards' 
+				ng-if="std != currentStandard"
+				ng-click="changeStandard(std)">
+			{{std}}
+		</span>
+	</div> 
+</div>

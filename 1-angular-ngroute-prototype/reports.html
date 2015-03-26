@@ -1,0 +1,20 @@
+<div id="pageContent">
+    <div id="top-bar">
+        <div id="top-student-navigation">
+            <div class="container">
+                <div student-list list-of-students="allStudents" current-student="currentStudent"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="report-container">
+        <div class="row">
+            <div class="col-md-7">
+                <div report-graph current-student="currentStudent"></div>
+            </div>
+            <div class="col-md-5">
+                <div standards current-standard="currentStandard" available-standards="availableStandards"></div>
+            </div>
+        </div>
+    </div>
+    <div resources list-of-resources="resources[currentStandard]"></div>
+</div>

@@ -1,0 +1,34 @@
+<polymer-element name="add-student" attributes="allStudents">
+    <template>
+        <div>
+            <div class="graph-title">Add Students</div>
+            <form>
+                <div class="form-group">
+                    <label for="studentFirstName">First Name</label>
+                    <input type="text" class="form-control" id="studentFirstName" ng-model="student.firstname"
+                           placeholder="Enter first name">
+                </div>
+                <div class="form-group">
+                    <label for="studentLastInitial">Last Initial</label>
+                    <input type="text" class="form-control" id="studentLastInitial" ng-model="student.lastinitial"
+                           placeholder="Enter last initial">
+                </div>
+                <button type="submit" on-tap="{{addStudent}}" class="btn btn-default">Add</button>
+            </form>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            ready: function() {
+//                this._currentStudent = JSON.parse(this.currentStudent);
+                console.log("In Ready of add-student");
+            },
+            addStudent: function(event, detail, sender) {
+                var firstname = document.getElementById("studentFirstName").value;
+                var lastinitial = document.getElementById("studentLastInitial").value;
+                var student = {firstName: firstname, lastInitial: lastinitial};
+                PubSub.publish( 'ADD_STUDENT', student );
+            }
+        });
+    </script>
+</polymer-element>

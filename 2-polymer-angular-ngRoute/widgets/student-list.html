@@ -1,0 +1,42 @@
+<polymer-element name="student-list" attributes="listOfStudents currentStudent">
+	<template>
+		<div id="students-in-class" class="row">
+			<div class="col-xs-10" id="student-list-container">
+				<div class="list">
+					<template repeat="{{_student in _listOfStudents}}">
+						<template if="{{ _student.id == _currentStudent.id }}">
+	  						<div class="item" on-tap="{{selectStudent}}">
+	  							<div class="student" data-studentid="{{_student.id}}" id="evaluation-student-{{_student.id}}">
+	  								<div class="imageWrapper "></div>
+	  								<span>{{_student.firstName}} {{_student.lastInitial}}</span>
+	  							</div>
+	  						</div>
+						</template>
+						<template if="{{ _student.id != _currentStudent.id }}">
+							<div class="item" on-tap="{{selectStudent}}">
+								<div class="student" data-studentid="{{_student.id}}" id="evaluation-student-{{_student.id}}">
+									<div class="imageWrapper "></div>
+									<span>{{_student.firstName}} {{_student.lastInitial}}</span>
+								</div>
+							</div>
+						</template>
+					</template>
+				</div>
+			</div>
+		</div>
+	</template>
+    <script>
+    	Polymer('student-list', {
+			ready: function() {
+				this._listOfStudents = JSON.parse(this.listOfStudents);
+				this._currentStudent = JSON.parse(this.currentStudent);
+				console.log("In Ready of student-list");
+			},
+			selectStudent: function(e, detail, sender) {
+				var student = e.target.templateInstance.model._student;
+				console.log("Selected Student " + student.id);
+                PubSub.publish( 'SELECT_STUDENT', student );
+			}
+    	});
+    </script>
+</polymer-element>

@@ -1,0 +1,29 @@
+<polymer-element name="resources-widget" attributes="resources">
+	<template>
+		<div class="container clearfix" id="differentiation-container">
+			<div class="differentiation-title">Resource</div>
+			<!-- <div class="resource" ng-repeat='dr in assets'>{{dr}}</div> -->
+			<template repeat="{{_resource in _resources}}">
+				<div class="resource">{{_resource}}</div>
+			</template>
+		</div>
+	</template>
+    <script>
+        var token = PubSub.subscribe('SELECT_STANDARD', this.selectStandard );
+        function selectStandard(event, to_standard) {
+            var widget = document.querySelector('#resources-widget-1');
+            widget.update(resources[to_standard]);
+        };
+    	Polymer({
+			ready: function() {
+				console.log(this.resources);
+				this._resources = JSON.parse(this.resources);
+			},
+			update: function(newListOfResources) {
+				console.log(this._resources);
+				console.log("newListOfResources = " + newListOfResources);
+				this._resources = newListOfResources;
+			}
+		});
+	</script>
+</polymer-element>
