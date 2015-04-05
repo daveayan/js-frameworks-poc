@@ -28,11 +28,13 @@ angular.module('jsframeworkspocangularApp', ['ngRoute'])
 var token = PubSub.subscribe( 'ADD_STUDENT', this.addStudent );
 function addStudent(event, new_student) {
     console.log("Adding ... ");
-    console.log(new_student);
     var studentToAdd = {
         id: "id" + allStudents.length + 1,
         firstName: new_student.firstName,
         lastInitial: new_student.lastInitial
     };
+    console.log(studentToAdd);
+    console.log(allStudents);
     allStudents.push(studentToAdd);
+    console.log(allStudents);
 };
