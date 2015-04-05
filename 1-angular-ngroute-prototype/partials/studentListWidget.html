@@ -1,0 +1,17 @@
+<div id="students-in-class" class="row">
+	<div id="student-list-container" class="col-xs-10">
+		<div class="list">
+			<div ng-repeat="student in listOfStudents">
+				<div class="item">
+					<div ng-click="changeStudent(student)"
+						id="student-{{student.id}}-id"
+						data-studentid="{{student.id}}"
+						class="student">
+						<div class="imageWrapper"></div>
+						<span class="student-link">{{student.firstName}} {{student.lastInitial}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

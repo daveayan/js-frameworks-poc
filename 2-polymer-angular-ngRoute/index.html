@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="" data-ng-app="jsframeworkspocangularApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Polymer - JS Frameworks POC</title>
+<link href="../0-static-html/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="../0-static-html/main.css" rel="stylesheet" media="screen">
+<link rel="import" href="polymer/polymer/polymer.html">
+<link rel="import" href="widgets/student-list.html">
+<link rel="import" href="widgets/report-graph-widget.html">
+<link rel="import" href="widgets/standardsWidget.html">
+<link rel="import" href="widgets/resourcesWidget.html">
+<link rel="import" href="widgets/add-student-widget.html">
+<body class="main" data-ng-controller="jsframeworkspocangularController">
+	<div id="page" class="evaluation  ">
+		<div id="header">
+			<header>
+				<header>
+					<div class="container">
+						<span class="header-title">JS Framework POC - Polymer Angular ngRoute</span>
+					</div>
+				</header>
+			</header>
+		</div>
+        <div data-ng-view=""></div>
+	</div>
+    <script src="polymer/platform/platform.js"></script>
+    <script src="pubsub.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular-route.js"></script>
+	<script type="text/javascript" src="js-framework-poc-polymer.js"></script>
+</body>
+</html>

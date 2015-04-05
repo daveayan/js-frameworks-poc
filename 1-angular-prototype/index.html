@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>AngularJS - JS Frameworks POC</title>
-<!-- Bootstrap -->
-<link href="../0-static-html/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="../0-static-html/main.css" rel="stylesheet" media="screen">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>AngularJS - JS Frameworks POC</title>
+    <!-- Bootstrap -->
+    <link href="../0-static-html/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../0-static-html/main.css" rel="stylesheet" media="screen">
 <body class="main">
-	<div id="page">
-		<div id="header">
-			<header>
-				<div class="container">
-					<span class="header-title">JS Framework POC - Angular JS</span>
-				</div>
-			</header>
-		</div>
-			<div id="pageContent" data-ng-app="jsframeworkspocangularApp" ng-controller="jsframeworkspocangularController">
-			  <div id="top-bar">
-			    <div id="top-student-navigation">
-			      <div class="container">
-			        <div student-list list-of-students="allStudents" current-student="currentStudent"></div>
-			      </div>
-			    </div>
-			  </div>
-			  <div class="container" id="report-container">
-			    <div class="row">
-			      <div class="col-md-7">
-			        <div report-graph current-student="currentStudent"></div>
-			      </div>
-			      <div class="col-md-5">
-			        <div standards current-standard="currentStandard" available-standards="availableStandards"></div>
-			      </div>
-			    </div>
-			  </div>
-			  <div resources list-of-resources="resources[currentStandard]"></div>
-			</div>
-		</div>
-	</div>
+<div id="page">
+    <div id="header">
+        <header>
+            <div class="container">
+                <span class="header-title">JS Framework POC - Angular JS</span>
+            </div>
+        </header>
+    </div>
+    <div id="pageContent" data-ng-app="jsframeworkspocangularApp" ng-controller="jsframeworkspocangularController">
+        <div id="top-bar">
+            <div id="top-student-navigation">
+                <div class="container">
+                    <div student-list list-of-students="allStudents" current-student="currentStudent"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="report-container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div report-graph current-student="currentStudent"></div>
+                </div>
+                <div class="col-md-5">
+                    <div standards current-standard="currentStandard" available-standards="availableStandards"></div>
+                </div>
+            </div>
+        </div>
+        <div resources list-of-resources="resources[currentStandard]"></div>
+    </div>
+</div>
+</div>
 
-	<script type="text/javascript" src="angular.js"></script>
-	<script type="text/javascript" src="js-framework-poc-angular.js"></script>
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="js-framework-poc-angular.js"></script>
 </body>
 </html>

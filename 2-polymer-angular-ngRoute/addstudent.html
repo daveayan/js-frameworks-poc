@@ -1,0 +1,24 @@
+<div id="pageContent">
+    <div id="top-bar">
+        <div id="top-student-navigation">
+            <div class="container">
+                <student-list id="student-list-1" listOfStudents="{{allStudents}}" currentStudent="{{currentStudent}}"/>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="report-container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="graph-container">
+                    <add-student all-students="allStudents"></add-student>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="graph-container">
+                    <div class="graph-title">Routes</div>
+                    <a href="#poc-reports">Reports</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
