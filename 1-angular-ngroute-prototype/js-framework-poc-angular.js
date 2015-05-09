@@ -1,8 +1,9 @@
 angular.module('jsframeworkspocangularApp', ['ngRoute'])
-    .config(function ($routeProvider) {
+    .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {templateUrl: 'addstudent.html', controller: 'jsframeworkspocangularController'})
             .when('/poc-reports', {templateUrl: 'reports.html', controller: 'jsframeworkspocangularController'});
+        //$locationProvider.html5Mode(true);
     })
     .controller('jsframeworkspocangularController', ['$scope', function ($scope) {
         if(! $scope.dataInitialized) {

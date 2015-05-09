@@ -1,0 +1,9 @@
+{
+  "name": "2-polymer-angular-ngRoute",
+  "version": "0.0.1",
+  "dependencies": {
+    "pubsub-js": "~1.5.2",
+    "react": "0.13.2"
+  },
+  "devDependencies": {}
+}

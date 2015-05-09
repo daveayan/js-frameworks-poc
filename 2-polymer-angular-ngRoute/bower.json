@@ -1,0 +1,12 @@
+{
+  "name": "2-polymer-angular-ngRoute",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.4.0-beta.6",
+    "angular-route": "1.4.0-beta.6",
+    "polymer": "Polymer/polymer#^0.5",
+    "pubsub-js": "~1.5.2"
+  },
+  "devDependencies": {
+  }
+}
