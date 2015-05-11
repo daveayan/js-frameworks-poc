@@ -1,0 +1,14 @@
+<div>
+    <div class="graph-title">Add Students</div>
+    <form>
+        <div class="form-group">
+            <label for="studentFirstName">First Name</label>
+            <input type="text" class="form-control" id="studentFirstName" ng-model="student.firstname" placeholder="Enter first name">
+        </div>
+        <div class="form-group">
+            <label for="studentLastInitial">Last Initial</label>
+            <input type="text" class="form-control" id="studentLastInitial" ng-model="student.lastinitial" placeholder="Enter last initial">
+        </div>
+        <button type="submit" ng-click="addStudent(student)" class="btn btn-default">Add</button>
+    </form>
+</div>
