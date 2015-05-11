@@ -1,9 +1,12 @@
-(function () {
-    angular.module('jsframeworkspocangularApp', [])
+define([
+    'angular'
+], function (angular) {
+    'use strict';
+    var angularApp = angular.module('jsframeworkspocangularApp', [])
         .controller('jsframeworkspocangularController', ['$scope', function ($scope) {
-            student1 = {id: 'id1', firstName: 'Student', lastInitial: 'A'};
-            student2 = {id: 'id2', firstName: 'Student', lastInitial: 'B'};
-            student3 = {id: 'id3', firstName: 'Student', lastInitial: 'C'};
+            var student1 = {id: 'id1', firstName: 'Student', lastInitial: 'A'};
+            var student2 = {id: 'id2', firstName: 'Student', lastInitial: 'B'};
+            var student3 = {id: 'id3', firstName: 'Student', lastInitial: 'C'};
 
             var allStudents = [student1, student2, student3];
 
@@ -64,4 +67,5 @@
                 templateUrl: 'partials/differentiationResourcesWidget.html'
             };
         });
-})();
+    return angularApp;
+});
