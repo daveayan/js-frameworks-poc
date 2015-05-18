@@ -1,0 +1,25 @@
+<html>
+	<head>
+	</head>
+	<body>
+        This is for a structure where:
+        <ul>
+        <li>A is not built with RequireJS. It is simple JS that uses jquery
+			<ul>
+				<li>A has two functions. One to execute before require bootstraps</li>
+				<li>Second to execute after require bootstraps</li>
+			</ul>
+		</li>
+        <li>B depends on Common</li>
+        <li>C depends on Common</li>
+        <li>Common depends on jquery</li>
+        </ul>
+		<div id="runningLog">
+			<b>Console Log:</b>
+		</div>
+
+		<script src="jquery.js"></script>
+		<script src="a.js"></script>
+		<script data-main="main" src="http://requirejs.org/docs/release/2.1.17/minified/require.js"></script>
+	</body>
+</html>
